@@ -75,11 +75,11 @@ a {
     width: 100%;
     height: 100vh;
     padding: 3em;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-    grid-template-areas: 
-    'header ...'
-    'social-media info';
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "header header-mobile ..."
+      "social-media ... info";
 
     .header {
       grid-area: header;
@@ -110,11 +110,67 @@ a {
     }
 
     .info {
-      font-size: 24px;
+      font-size: 16px;
       grid-area: info;
       align-self: end;
       justify-self: end;
       color: #929AAB;
+      text-align: right;
+    }
+  }
+
+  .menu {
+    position: relative;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 0 25vw;
+    &__item {
+      font-family: var(--font-display);
+      font-size: 62.83px;
+      color: var(--color-text);
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      &:hover, &:focus {
+        color: var(--color-link-hover);
+      }
+      &::before {
+        content: '';
+        display: block;
+        width: 60%;
+        height: 24px;
+        z-index: -1;
+        background: linear-gradient(45deg, #929AAB, #D3D5FD);
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transform-origin: 0 0;
+        transform: scale3d(0,1,1)
+      }
+      &--showDeco::before {
+        transition: transform 0.8s cubic-bezier(0.2,1,0.3,1);
+        transform: scale3d(1,1,1);
+      }
+      &--showDeco:hover::before {
+        transition: transform 0.8s cubic-bezier(0.2,1,0.3,1);
+        transform: scale3d(1.2,1,1);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 55em) {
+  .content {
+    &--fixed {
+      padding: 1em;
+      .header {
+        grid-area: header-mobile;
+        justify-self: center;
+      }
+    }
+    .menu {
+      margin: 0 auto;
     }
   }
 }
