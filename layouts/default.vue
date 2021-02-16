@@ -7,20 +7,21 @@
 <style lang="scss">
 // reset style
 @import "~/assets/normalize.css";
+// import google fonts
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Raleway&display=swap');
 
 :root {
-  --color-text: #D3D5FD;
+  --color-text-white: #D3D5FD;
+  --color-text-black: #373738;
 	--color-bg: #0B0B0D;
 	--color-link: #D3D5FD;
 	--color-link-hover: #d3d5fd80;
   --font-text: 'Raleway', sans-serif;
-  --font-display: 'Abril Fatface', sans-serif;
+  --font-display: 'Abril Fatface', cursive;
 }
 
 html, body {
-  font-family:
-    'Raleway',
-    sans-serif;
+  font-family: var(--font-text);
   font-size: 24px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -28,7 +29,7 @@ html, body {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   background-color: var(--color-bg);
-  color: var(--color-text);
+  color: var(--color-text-white);
   min-height: 100vh;
 }
 
@@ -55,15 +56,38 @@ a {
   align-items: center;
   margin: 0 auto;
   min-height: 100vh;
+  padding: 3em;
+
+  &__inner {
+    display: grid;
+    justify-items: center;
+    row-gap: 40px;
+  }
+
+  &__title {
+    font-family: var(--font-display);
+    font-size: 101.66px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: var(--color-text-black);
+  }
+
+  &__subtitle {
+    font-family: var(--font-text);
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--color-text-black);
+    text-align: justify;
+  }
 
   &--reveal {
     position: absolute;
-    z-index: 1001;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    pointer-events: none;
+    background: linear-gradient(45deg, #717684, #929AAB);
+    flex-direction: column;
   }
   
   &--fixed {
@@ -75,6 +99,7 @@ a {
     width: 100%;
     height: 100vh;
     padding: 3em;
+    pointer-events: none;
     grid-template-columns: repeat(3, minmax(0,1fr));
     grid-template-rows: auto auto;
     grid-template-areas:
@@ -85,10 +110,16 @@ a {
       grid-area: header;
       align-self: start;
       justify-self: start;
+      pointer-events: auto;
+      cursor: pointer;
       &__title {
         letter-spacing: -9px;
         font-family: var(--font-display);
         margin: 0;
+        transition: ease .25s;
+        &:hover {
+          letter-spacing: 0;
+        }
       }
     }
 
@@ -98,11 +129,13 @@ a {
       justify-self: start;
       list-style-type: none;
       display: flex;
+      pointer-events: auto;
       a {
         margin-right: 16px;
       }
       svg {
-        fill: var(--color-text);
+        fill: var(--color-text-white);
+        width: 32px;
         &:hover {
           fill: var(--color-link-hover);
         }
@@ -116,6 +149,7 @@ a {
       justify-self: end;
       color: #929AAB;
       text-align: right;
+      pointer-events: auto;
     }
   }
 
@@ -128,20 +162,17 @@ a {
     &__item {
       font-family: var(--font-display);
       font-size: 62.83px;
-      color: var(--color-text);
+      color: var(--color-text-white);
       position: relative;
       display: flex;
       flex-direction: row;
-      &:hover, &:focus {
-        color: var(--color-link-hover);
-      }
       &::before {
         content: '';
         display: block;
         width: 60%;
         height: 24px;
         z-index: -1;
-        background: linear-gradient(45deg, #929AAB, #D3D5FD);
+        background: linear-gradient(45deg, #929AAB, #4DD0E1);
         position: absolute;
         left: 0;
         bottom: 0;
@@ -168,10 +199,47 @@ a {
         grid-area: header-mobile;
         justify-self: center;
       }
+      .social-media {
+        svg {
+          width: 24px;
+        }
+      }
     }
     .menu {
       margin: 0 auto;
     }
+  }
+}
+
+// decor
+.decor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  min-width: 100%;
+  max-width: 200%;
+}
+
+// back button
+.backButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  color: var(--color-text-black);
+  border: 2px solid var(--color-text-black);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: currentColor;
+  svg path {
+    stroke: var(--color-text-black);
+  }
+  &:hover {
+    border-color: var(--color-link-hover);
+    background: var(--color-link-hover);
   }
 }
 
