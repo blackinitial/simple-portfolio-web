@@ -33,6 +33,6 @@
         </a>
       </li>
     </ul>
-    <p class="info">made by <a href="#">blackinitial</a></p>
+    <p class="info">made by <a href="https://github.com/blackinitial" target="_blank">blackinitial</a></p>
   </div>
 </template>
