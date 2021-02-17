@@ -3,6 +3,7 @@ dependencies:
   nuxt: 2.15.0
 devDependencies:
   fibers: 5.0.0
+  nuxt-animejs: 1.2.1
   sass: 1.32.7
   sass-loader: 10.1.1_fibers@5.0.0+sass@1.32.7
 lockfileVersion: 5.2
@@ -1671,6 +1672,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=
+  /animejs/3.2.1:
+    dev: true
+    resolution:
+      integrity: sha512-sWno3ugFryK5nhiDm/2BKeFCpZv7vzerWUcUPyAZLDhMek3+S/p418ldZJbJXo5ZUOpfm2kP2XRO4NJcULMy9A==
   /ansi-align/3.0.0:
     dependencies:
       string-width: 3.1.0
@@ -5126,6 +5131,12 @@ packages:
     dev: false
     resolution:
       integrity: sha1-b2gragJ6Tp3fpFZM0lidHU5mnt4=
+  /nuxt-animejs/1.2.1:
+    dependencies:
+      animejs: 3.2.1
+    dev: true
+    resolution:
+      integrity: sha512-cTdOxSB76k5Fspp5ia4hjMd/+wsNqKm/AWmDU5yCOnnuc7/0faudpKFOmDmgVe5z+IXYxPf7jyXHDmLd8agxkg==
   /nuxt/2.15.0:
     dependencies:
       '@nuxt/babel-preset-app': 2.15.0
@@ -8060,5 +8071,6 @@ specifiers:
   core-js: ^3.8.3
   fibers: ^5.0.0
   nuxt: ^2.14.12
+  nuxt-animejs: ^1.2.1
   sass: ^1.32.7
   sass-loader: '10'
