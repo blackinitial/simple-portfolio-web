@@ -17,8 +17,20 @@ export default {
       { hid: 'description', name: 'description', content: 'simple portfolio web with simple transitions and motion design' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/icon.png' }
     ]
+  },
+  // PWA setting
+  pwa: {
+    meta: {
+      title: 'Simple Portfolio Web',
+      author: 'Black Initial',
+    },
+    manifest: {
+      name: 'Simple Portfolio Web',
+      short_name: 'SWP',
+      lang: 'id',
+    },
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -36,7 +48,8 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    'nuxt-animejs'
+    'nuxt-animejs',
+    '@nuxtjs/pwa'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
