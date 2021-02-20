@@ -87,7 +87,7 @@ main {
     font-size: 24px;
     font-weight: 400;
     color: var(--color-text-black);
-    text-align: justify;
+    text-align: center;
   }
 
   &--reveal {
@@ -95,9 +95,10 @@ main {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: auto;
     background: linear-gradient(135deg, #929AAB, #717684);
     flex-direction: column;
+    overflow-y: visible;
   }
   
   &--fixed {
@@ -256,11 +257,36 @@ main {
   border-radius: 50%;
   cursor: pointer;
   outline: currentColor;
+  margin-bottom: 2em;
   svg path {
     stroke: var(--color-text-black);
   }
   &:hover {
     border-color: var(--color-link-hover);
     background: var(--color-link-hover);
+  }
+}
+
+.blog {
+  &__list {
+    list-style: none;
+    width: 100%;
+    margin-top: 2em;
+  }
+  &__post {
+    margin-bottom: 2em;
+    &-title {
+      font-family: var(--font-display);
+      font-size: 38.83px;
+      font-weight: 400;
+      color: var(--color-text-black);
+      margin-bottom: 8px;
+      a {
+        color: inherit;
+      }
+    }
+    &-meta {
+      font-size: 14.83px;
+    }
   }
 }

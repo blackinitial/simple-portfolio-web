@@ -551,13 +551,9 @@ export default {
       targets: '.menu .menu__item',
       translateX: 0,
       opacity: 1,
-      easing: 'easeInOutSine',
+      easing: 'easeOutElastic(1, .6)',
       delay: this.$anime.stagger(300),
     })
-  },
-
-  destroyed() {
-    document.querySelector('svg.decor').querySelectorAll('.decor-group')
   }
 }
 </script>
