@@ -17,7 +17,7 @@ export default {
       { hid: 'description', name: 'description', content: 'simple portfolio web with simple transitions and motion design' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/icon.png' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
   // PWA setting
