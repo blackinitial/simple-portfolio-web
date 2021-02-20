@@ -3,6 +3,11 @@
     <HeaderFooter />
 
     <div id="scroll" data-scroll-container class="content content--reveal">
+      <div class="content__inner">
+        <h2 class="content__title">Projects</h2>
+        <h3 class="content__subtitle">Ini hanya daftar project fiktif belaka</h3>
+      </div>
+
       <div class="gallery">
         <div class="back-mod">
           <BackButton/>
