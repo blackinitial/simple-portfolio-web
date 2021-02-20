@@ -6,6 +6,7 @@
 :root {
   --color-text-white: #D3D5FD;
   --color-text-black: #373738;
+  --color-accent: #4DD0E1;
 	--color-bg: #0B0B0D;
 	--color-link: #D3D5FD;
 	--color-link-hover: #d3d5fd80;
@@ -107,7 +108,7 @@ main {
     top: 0;
     left: 0;
     display: grid;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     padding: 3em 5em;
     pointer-events: none;
@@ -289,4 +290,9 @@ main {
       font-size: 14.83px;
     }
   }
+}
+
+// scrollbar
+::-webkit-scrollbar {
+  display: none;
 }
