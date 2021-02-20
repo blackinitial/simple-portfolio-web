@@ -42,6 +42,10 @@ a {
   }
 }
 
+main {
+  overflow: hidden;
+}
+
 .content {
   position: relative;
   display: flex;
@@ -63,6 +67,19 @@ a {
     font-weight: 400;
     letter-spacing: -0.02em;
     color: var(--color-text-black);
+    position: relative;
+    z-index: 1;
+    &::before {
+      content: '';
+      display: block;
+      width: 70%;
+      height: 45px;
+      z-index: -1;
+      background: linear-gradient(45deg, #929AAB, #4DD0E1);
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
   }
 
   &__subtitle {
@@ -160,6 +177,7 @@ a {
       display: flex;
       flex-direction: row;
       width: fit-content;
+      cursor: pointer;
       &::before {
         content: '';
         display: block;
@@ -171,7 +189,7 @@ a {
         left: 0;
         bottom: 0;
         transform-origin: 0 0;
-        transform: scale3d(0,1,1)
+        transform: scale3d(0,1,1);
       }
       &--showDeco::before {
         transition: transform 0.8s cubic-bezier(0.2,1,0.3,1);
@@ -214,6 +232,15 @@ a {
   height: 100vh;
   min-width: 100%;
   max-width: 200%;
+  
+  @for $i from 0 through 4 {
+    #decor-#{$i} {
+      transition: ease 1s;
+    }
+  }
+  .decor-group {
+    scale: 0;
+  }
 }
 
 // back button
