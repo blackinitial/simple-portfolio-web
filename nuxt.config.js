@@ -24,12 +24,17 @@ export default {
   pwa: {
     meta: {
       title: 'Simple Portfolio Web',
+      description: 'Simple Portfolio Web dibuat dg Nuxt JS, Anime JS, Locomotive JS',
       author: 'Black Initial',
+      theme_color: '#0B0B0D',
+      lang: 'id'
     },
     manifest: {
       name: 'Simple Portfolio Web',
       short_name: 'SWP',
+      description: 'Simple Portfolio Web dibuat dg Nuxt JS, Anime JS, Locomotive JS',
       lang: 'id',
+      background_color: '#0B0B0D',
     },
   },
 
